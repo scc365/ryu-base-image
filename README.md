@@ -1,5 +1,7 @@
 # Ryu Docker Base Image 🐳
 
+[![Docker Build](https://github.com/scc365/ryu-base-image/actions/workflows/docker.yml/badge.svg?branch=main)](https://github.com/scc365/ryu-base-image/actions/workflows/docker.yml)
+
 This is a base image for a dockerized Ryu controller application. It contains a small set of python packages that you are likely to use when creating Ryu controllers and, of-course, it contains Ryu itself.
 
 ## Available Images
