@@ -6,18 +6,18 @@ This is a base image for a dockerized Ryu controller application. It contains a 
 
 All images are available via the GitHub Container Registry (`ghcr.io`) and target ARM and x86 architectures.
 
- - `ghcr.io/scc365/ryu:4.34`
+ - `ghcr.io/scc365/ryu:latest` (v4.34)
  - `ghcr.io/scc365/ryu:4.33`
  - `ghcr.io/scc365/ryu:4.32`
  - `ghcr.io/scc365/ryu:4.31`
- - `ghcr.io/scc365/ryu:4.30`
+ - `ghcr.io/scc365/ryu:4.3`
 
 ## Usage
 
 This can simply be used as is like so:
 
 ```dockerfile
-ARG RYU_VERSION=4.34
+ARG RYU_VERSION=latest
 FROM ghcr.io/scc365/ryu:${RYU_VERSION}
 ```
 

@@ -1,3 +1,5 @@
+name: Docker Build
+
 on: push
 
 jobs:
@@ -6,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ryu: [4.34, 4.33, 4.32, 4.31, 4.30]
+        ryu: [4.34, 4.33, 4.32, 4.31, 4.3]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -29,7 +31,7 @@ jobs:
           push: true
           build-args: RYU_VERSION=${{ matrix.ryu }}
           tags: |
-            ghcr.io/${{ github.repository_owner }}/ryu:${{ matrix.ryu }}
+            ghcr.io/${{ github.repository_owner }}/ryu:${{ (matrix.ryu == 4.34 && 'latest') || matrix.ryu }}
           no-cache: false
           labels: |
             org.opencontainers.image.title=ryu
