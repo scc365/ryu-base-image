@@ -14,14 +14,21 @@ All images are available via the GitHub Container Registry (`ghcr.io`) and targe
  - `ghcr.io/scc365/ryu:4.31`
  - `ghcr.io/scc365/ryu:4.3`
 
-## Usage
+## Example Usage
 
 This can simply be used as is like so:
 
 ```dockerfile
 ARG RYU_VERSION=latest
 FROM ghcr.io/scc365/ryu:${RYU_VERSION}
+
+WORKDIR /controller
+COPY controller.py .
+
+CMD [ "--verbose", "./controller.py" ]
 ```
+
+> ⚖️ Equivalent to running `ryu-manager --verbose ./controller.py`
 
 It is not suggested that you alter the packages in the `requirements.txt` file here. Instead, use a separate file specifically for your controller.
 
